@@ -1,2 +1,1 @@
-# pf_ftn_magnetization
-Increasing the magnetizability of P. furiosus ferritin using mutations collected from E. coli.
+Sequences: 2JD7 and 2JD8 are PfFtn, all else are EcFtn
