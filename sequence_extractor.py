@@ -13,6 +13,7 @@ pdb_ids = []
 structures_dir = "pdb_structures"
 parser = MMCIFParser()
 
+# Read structures from IO
 for item in listdir(structures_dir):
     if item.find('.') == -1:
         for subitem in listdir(structures_dir + "/" + item):
@@ -20,6 +21,7 @@ for item in listdir(structures_dir):
             structures.append(parser.get_structure(subitem[:4], structures_dir + "/" + item + "/" + subitem))
             pdb_ids.append(subitem[:4])
 
+# Extract peptide sequences and write to sequence_from_structure
 ppb = PPBuilder()
 for i, structure in enumerate(structures):
     pdb_id = pdb_ids[i]

@@ -1,5 +1,11 @@
-# Detect and remove duplicate sequences.
-def remove_duplicates(sequences):
+def remove_duplicates(sequences: list):
+    """
+    Detects and removes duplicate sequences.
+    Args:
+        sequences: list of Seq objects
+    Returns:
+        list of Seq objects
+    """
     unique_sequences = []
     for seq in sequences:
       in_unique = False
@@ -12,14 +18,25 @@ def remove_duplicates(sequences):
          unique_sequences.append(seq)
     return unique_sequences
 
-# Pad sequences with - to make them the same length for processing with MUSCLE.
-def padding(sequences):
+def padding(sequences: list):
+    """
+    Pad sequences with - to make them the same length for processing with MUSCLE.
+    Args:
+        sequences: list of Seq objects
+    Returns:
+        list of Seq objects
+    """
     padded_sequences = []
     max_length = max([len(seq) for seq in sequences])
     for seq in sequences:
         padded_sequences.append(seq + (max_length-len(seq))*'-')
     return padded_sequences
 
-# Function to print a Sequence object in a more accessible way.
+
 def seq_print(seq):
+    """
+    Function to print a Sequence object in a more accessible way.
+    Args: 
+        seq: Seq object
+    """
     print(seq.id[:4] + "|" + seq.seq)
